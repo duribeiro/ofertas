@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ofertas - Eduardo Ribeiro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background: #050505; color: #fff; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+    <div class="w-full max-w-2xl">
+        <div class="mb-12">
+            <h1 class="text-4xl font-black tracking-tighter uppercase mb-2">Ofertas Ativas</h1>
+            <p class="text-zinc-500">Hub de produtos e serviços.</p>
+        </div>
+        
+        <div class="grid gap-4">
+            <a href="mentoria/" class="group block border border-zinc-800 bg-zinc-950 p-6 hover:border-white transition-all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h2 class="text-xl font-bold uppercase mb-1">Mentoria do Domínio</h2>
+                        <p class="text-zinc-500 text-sm">Aceleração operacional com IA embutida.</p>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="text-zinc-600 group-hover:text-white transition-colors"></i>
+                </div>
+            </a>
+            
+            <a href="the-offer/" class="group block border border-zinc-800 bg-zinc-950 p-6 hover:border-[#FFED00] transition-all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h2 class="text-xl font-bold uppercase mb-1">The Offer</h2>
+                        <p class="text-zinc-500 text-sm">Agente gerador de ofertas e scripts.</p>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="text-zinc-600 group-hover:text-[#FFED00] transition-colors"></i>
+                </div>
+            </a>
+            
+            <a href="sos-meu-insta/" class="group block border border-zinc-800 bg-zinc-950 p-6 hover:border-[#FF3B30] transition-all">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h2 class="text-xl font-bold uppercase mb-1">SOS Meu Insta</h2>
+                        <p class="text-zinc-500 text-sm">Guia de proteção e auditoria de contas.</p>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="text-zinc-600 group-hover:text-[#FF3B30] transition-colors"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
