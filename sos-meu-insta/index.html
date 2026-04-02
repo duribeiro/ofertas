@@ -3,83 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOS Meu Insta</title>
+    <title>SOS Meu Insta — Recuperação e Proteção de Contas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #030303; color: #fff; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
-        .red-alert { color: #FF3B30; }
-        .bg-red-alert { background-color: #FF3B30; }
-        .glass { background: rgba(20, 20, 20, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 59, 48, 0.2); }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
     </style>
 </head>
-<body class="min-h-screen relative selection:bg-[#FF3B30] selection:text-white">
-    <!-- Grid background -->
-    <div class="absolute inset-0 z-0 opacity-10" style="background-image: linear-gradient(#FF3B30 1px, transparent 1px), linear-gradient(90deg, #FF3B30 1px, transparent 1px); background-size: 60px 60px;"></div>
-    
-    <div class="relative z-10 max-w-5xl mx-auto p-6 pt-20">
-        <div class="text-center mb-20">
-            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-red-950 border border-red-500 mb-8 shadow-[0_0_30px_rgba(255,59,48,0.3)]">
-                <i data-lucide="shield-alert" class="w-10 h-10 red-alert"></i>
-            </div>
-            <h1 class="text-6xl md:text-7xl font-black tracking-tighter mb-6 uppercase">SOS MEU INSTA</h1>
-            <p class="text-xl text-zinc-400 max-w-2xl mx-auto">Um sequestro de conta pode destruir meses de construção em horas. Prevenir custa infinitamente menos que tentar recuperar.</p>
-        </div>
+<body class="bg-zinc-950 text-white">
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="max-w-3xl text-center">
+            <p class="text-rose-500 font-medium tracking-widest uppercase mb-6">Recuperação e Proteção de Contas</p>
+            
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-8">
+                SOS Meu Insta
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-zinc-400 mb-4">
+                Perdeu o acesso ao seu Instagram?
+            </p>
+            <p class="text-lg text-zinc-500 mb-12">
+                Operação técnica e estratégica para recuperar ou remover contas e conteúdo indesejado.
+            </p>
 
-        <div class="grid lg:grid-cols-2 gap-10 mb-16">
-            <div class="glass p-8 md:p-10 rounded-none border-l-4 border-l-[#FF3B30]">
-                <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider flex items-center gap-3">
-                    <i data-lucide="book-open" class="red-alert"></i> O Guia Definitivo
-                </h3>
-                <ul class="space-y-6 text-zinc-300">
-                    <li class="flex items-start gap-4">
-                        <i data-lucide="lock" class="w-6 h-6 shrink-0 mt-0.5 red-alert"></i> 
-                        <div>
-                            <strong class="text-white block mb-1">Configurações Avançadas</strong>
-                            <span class="text-sm">2FA blindado, alertas de login e rotas de recuperação.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <i data-lucide="check-square" class="w-6 h-6 shrink-0 mt-0.5 red-alert"></i> 
-                        <div>
-                            <strong class="text-white block mb-1">Checklist Preventivo</strong>
-                            <span class="text-sm">Auditoria mensal guiada para fechar brechas de segurança.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <i data-lucide="alert-triangle" class="w-6 h-6 shrink-0 mt-0.5 red-alert"></i> 
-                        <div>
-                            <strong class="text-white block mb-1">Plano de Resposta Rápida</strong>
-                            <span class="text-sm">O protocolo exato para as primeiras 24h de um ataque.</span>
-                        </div>
-                    </li>
+            <a href="#como-funciona" class="inline-block bg-rose-500 hover:bg-rose-400 text-white font-bold py-4 px-8 text-lg transition-all">
+                PRECISO DE AJUDA AGORA
+            </a>
+        </div>
+    </section>
+
+    <!-- Diagnóstico -->
+    <section class="py-20 px-6 bg-zinc-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Se você está nesta situação...</h2>
+            
+            <div class="space-y-4 text-zinc-300 text-lg">
+                <p>• Conta ativa e visível, mas <strong class="text-white">sem acesso</strong> há meses ou anos</p>
+                <p>• Conteúdo indesejado em perfil que deveria ser seu</p>
+                <p>• Tentou tudo e a Meta não ajuda</p>
+                <p>• Não é invasão — é <strong class="text-white">perda de acesso legítimo</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section id="como-funciona" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">4 Frentes de Ação Simultâneas</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-zinc-900 p-8">
+                    <h3 class="text-xl font-bold text-rose-500 mb-4">🔧 1. Ataque Técnico — Brute Force Ético</h3>
+                    <p class="text-zinc-300">Ferramenta automatizada que simula pressões de acesso para forçar derrubada temporária ou remoção automática de conteúdo.</p>
+                    <p class="text-zinc-500 text-sm mt-2">Pode exigir execuções noturnas e contínuas.</p>
+                </div>
+
+                <div class="bg-zinc-900 p-8">
+                    <h3 class="text-xl font-bold text-rose-500 mb-4">📨 2. Suporte Meta — Recuperação Administrativa</h3>
+                    <p class="text-zinc-300">Solicitações formais via canais da Meta com dados da empresa, e-mails vinculados e argumentação técnica.</p>
+                </div>
+
+                <div class="bg-zinc-900 p-8">
+                    <h3 class="text-xl font-bold text-rose-500 mb-4">⚖️ 3. Ação Extrajudicial — Consumidor.gov.br</h3>
+                    <p class="text-zinc-300">Formalização de denúncia no portal GOV como titular legítimo da conta, com anexos de comprovação.</p>
+                </div>
+
+                <div class="bg-zinc-900 p-8">
+                    <h3 class="text-xl font-bold text-rose-500 mb-4">🧨 4. Via Judicial — Pedido Liminar</h3>
+                    <p class="text-zinc-300">Se necessário, produção de relatório técnico para embasar ação judicial com pedido de liminar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Termo -->
+    <section class="py-20 px-6 bg-zinc-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Termo de Autorização</h2>
+            
+            <div class="text-zinc-300 space-y-4">
+                <p>Você autoriza o especialista Eduardo Ribeiro a:</p>
+                <ul class="ml-6 space-y-2">
+                    <li>• Solicitar dados que comprovem a titularidade</li>
+                    <li>• Acessar temporariamente o e-mail vinculado (se necessário)</li>
+                    <li>• Usar a plataforma GOV para abertura de reclamação formal</li>
+                    <li>• Solicitar documentos pessoais (RG, CPF, comprovante)</li>
+                    <li>• Registrar B.O. se necessário para fortalecer o processo</li>
                 </ul>
-            </div>
-
-            <div class="space-y-6 flex flex-col justify-center">
-                <div class="border border-zinc-800 bg-zinc-900/60 p-6 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:border-zinc-600 transition-colors">
-                    <div>
-                        <div class="text-xl font-bold uppercase tracking-wider">Básico</div>
-                        <div class="text-zinc-500 text-sm">Guia PDF + Checklists</div>
-                    </div>
-                    <div class="flex items-center gap-6 sm:justify-end">
-                        <div class="text-2xl font-bold">R$197</div>
-                        <a href="#" class="text-sm text-white bg-zinc-800 px-4 py-2 font-bold uppercase hover:bg-zinc-700 transition-colors">Acessar</a>
-                    </div>
-                </div>
-
-                <div class="border border-[#FF3B30] bg-[#FF3B30]/5 p-6 relative shadow-[0_0_20px_rgba(255,59,48,0.1)]">
-                    <div class="absolute -top-3 left-6 bg-[#FF3B30] text-black text-xs font-black px-3 py-1 uppercase tracking-widest">Recomendado</div>
-                    <div class="mb-6 mt-2">
-                        <div class="text-xl font-black uppercase tracking-wider mb-1">Premium</div>
-                        <div class="text-zinc-400 text-sm mb-4">Guia + 2 Auditorias ao vivo (30min) + Suporte Telegram</div>
-                        <div class="text-4xl font-black">R$297</div>
-                    </div>
-                    <a href="#" class="block w-full bg-[#FF3B30] text-white text-center py-4 font-black tracking-widest hover:bg-white hover:text-black transition-colors">GARANTIR PREMIUM</a>
-                </div>
+                <p class="text-zinc-500 text-sm">Todos os dados são utilizados exclusivamente para o processo de recuperação.</p>
             </div>
         </div>
-    </div>
-    <script>lucide.createIcons();</script>
+    </section>
+
+    <!-- Investimento -->
+    <section id="investimento" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Investimento</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Sucesso -->
+                <div class="bg-gradient-to-b from-emerald-900/30 to-zinc-950 p-8">
+                    <p class="text-emerald-500 font-bold mb-2">✅ Caso tenha sucesso</p>
+                    <p class="text-4xl font-bold mb-4">R$ 997</p>
+                    <p class="text-zinc-400 text-sm mb-4">Pagamento somente após a solução</p>
+                    <ul class="text-zinc-300 text-sm space-y-2 text-left">
+                        <li>• Execução das 4 frentes com prioridade</li>
+                        <li>• Horas técnicas (inclusive madrugada)</li>
+                        <li>• Relatórios e suporte contínuo</li>
+                        <li>• Entrega de solução real</li>
+                    </ul>
+                </div>
+                
+                <!-- Insucesso -->
+                <div class="bg-gradient-to-b from-zinc-900 to-zinc-950 p-8">
+                    <p class="text-zinc-500 font-bold mb-2">❌ Caso nenhuma abordagem funcione</p>
+                    <p class="text-3xl font-bold mb-4">R$ 100</p>
+                    <p class="text-zinc-500 text-sm mb-4">Taxa simbólica pelo tempo dedicado</p>
+                    <ul class="text-zinc-400 text-sm space-y-2 text-left">
+                        <li>• Tempo dedicado</li>
+                        <li>• Execução técnica avançada</li>
+                        <li>• Tentativas formais e extrajudiciais</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <a href="#" class="inline-block bg-rose-500 hover:bg-rose-400 text-white font-bold py-4 px-8 text-lg transition-all">
+                    QUERO RECUPERAR MINHA CONTA
+                </a>
+                <p class="text-zinc-600 text-sm mt-4">Atendimento pode ser iniciado ainda hoje. Prazo estimado: 3 a 12 dias úteis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-zinc-800">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-zinc-500 mb-4">Eduardo Ribeiro — Especialista em Recuperação de Contas</p>
+            <p class="text-zinc-600 text-sm">Operação técnica, estratégica e com respaldo jurídico.</p>
+        </div>
+    </footer>
 </body>
 </html>

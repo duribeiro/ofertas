@@ -2,53 +2,56 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Ofertas - Eduardo Ribeiro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Ribeiro — Ofertas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background: #050505; color: #fff; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-6">
-    <div class="w-full max-w-2xl">
-        <div class="mb-12">
-            <h1 class="text-4xl font-black tracking-tighter uppercase mb-2">Ofertas Ativas</h1>
-            <p class="text-zinc-500">Hub de produtos e serviços.</p>
-        </div>
-        
-        <div class="grid gap-4">
-            <a href="mentoria/" class="group block border border-zinc-800 bg-zinc-950 p-6 hover:border-white transition-all">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-xl font-bold uppercase mb-1">Mentoria do Domínio</h2>
-                        <p class="text-zinc-500 text-sm">Aceleração operacional com IA embutida.</p>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="text-zinc-600 group-hover:text-white transition-colors"></i>
-                </div>
-            </a>
+<body class="bg-zinc-950 text-white">
+    <section class="min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-zinc-500 tracking-widest uppercase mb-8">Eduardo Ribeiro</p>
             
-            <a href="the-offer/" class="group block border border-zinc-800 bg-zinc-950 p-6 hover:border-[#FFED00] transition-all">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-xl font-bold uppercase mb-1">The Offer</h2>
-                        <p class="text-zinc-500 text-sm">Agente gerador de ofertas e scripts.</p>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="text-zinc-600 group-hover:text-[#FFED00] transition-colors"></i>
-                </div>
-            </a>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Ofertas</h1>
+            <p class="text-xl text-zinc-400 mb-16">Transforme seu talento em renda real</p>
             
-            <a href="sos-meu-insta/" class="group block border border-zinc-800 bg-zinc-950 p-6 hover:border-[#FF3B30] transition-all">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-xl font-bold uppercase mb-1">SOS Meu Insta</h2>
-                        <p class="text-zinc-500 text-sm">Guia de proteção e auditoria de contas.</p>
-                    </div>
-                    <i data-lucide="arrow-up-right" class="text-zinc-600 group-hover:text-[#FF3B30] transition-colors"></i>
-                </div>
-            </a>
+            <div class="grid gap-8 md:grid-cols-3">
+                <!-- Mentoria -->
+                <a href="/mentoria/" class="block bg-zinc-900 hover:bg-zinc-800 p-8 text-left transition-all group">
+                    <p class="text-amber-500 font-medium mb-2">Mentoria</p>
+                    <h2 class="text-2xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Mentoria do Domínio™</h2>
+                    <p class="text-zinc-400 text-sm mb-6">Para quem tem talento mas não consegue vender. Transforme sua habilidade em renda digital genuína.</p>
+                    <p class="text-amber-500 font-bold">R$ 3.000 ou 12x R$ 310</p>
+                </a>
+                
+                <!-- The Offer -->
+                <a href="/the-offer/" class="block bg-zinc-900 hover:bg-zinc-800 p-8 text-left transition-all group">
+                    <p class="text-emerald-500 font-medium mb-2">Sistema</p>
+                    <h2 class="text-2xl font-bold mb-4 group-hover:text-emerald-500 transition-colors">THE OFFER</h2>
+                    <p class="text-zinc-400 text-sm mb-6">Framework + Agente IA para estruturar ofertas que vendem em 30 minutos.</p>
+                    <p class="text-emerald-500 font-bold">R$ 100 (pré-venda)</p>
+                </a>
+                
+                <!-- SOS Meu Insta -->
+                <a href="/sos-meu-insta/" class="block bg-zinc-900 hover:bg-zinc-800 p-8 text-left transition-all group">
+                    <p class="text-rose-500 font-medium mb-2">Serviço</p>
+                    <h2 class="text-2xl font-bold mb-4 group-hover:text-rose-500 transition-colors">SOS Meu Insta</h2>
+                    <p class="text-zinc-400 text-sm mb-6">Recuperação e proteção de contas Instagram. 4 frentes de ação simultâneas.</p>
+                    <p class="text-rose-500 font-bold">R$ 997 (sucesso) ou R$ 100 (taxa)</p>
+                </a>
+            </div>
         </div>
-    </div>
-    <script>lucide.createIcons();</script>
+    </section>
+
+    <footer class="py-8 px-6 border-t border-zinc-800">
+        <div class="max-w-4xl mx-auto text-center text-zinc-600 text-sm">
+            <p>Eduardo Ribeiro — Arquiteto de Negócios & Estratégia Digital</p>
+        </div>
+    </footer>
 </body>
 </html>
