@@ -4,74 +4,398 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand Book — Dani Mentoria Tributária</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1b2a; color: #fff; padding: 40px; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; }
-        h1 { font-size: 48px; margin-bottom: 20px; background: linear-gradient(135deg, #f9c74f, #ffd60a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        h2 { font-size: 32px; margin: 40px 0 20px; color: #f9c74f; }
-        .note { background: rgba(249,199,79,0.1); border-left: 4px solid #f9c74f; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
-        .colors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0; }
-        .color { text-align: center; padding: 20px; background: #1b263b; border-radius: 12px; }
-        .swatch { height: 80px; border-radius: 8px; margin-bottom: 10px; }
-        .hex { font-family: monospace; font-size: 14px; color: #778da9; }
-        .info { background: #1b263b; padding: 30px; border-radius: 12px; margin: 20px 0; }
-        a { color: #f9c74f; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d1b2a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .page {
+            min-height: 100vh;
+            padding: 72px 96px;
+            position: relative;
+        }
+        
+        /* Cores */
+        .bg-primary { background: #0d1b2a; }
+        .bg-secondary { background: #1b263b; }
+        .bg-accent { background: #f9c74f; }
+        .text-primary { color: #ffffff; }
+        .text-secondary { color: #e0e1dd; }
+        .text-muted { color: #778da9; }
+        .text-accent { color: #f9c74f; }
+        
+        /* Títulos */
+        .hero-title {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 48px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .subtitle {
+            font-size: 32px;
+            font-weight: 500;
+            color: #e0e1dd;
+            margin-bottom: 48px;
+        }
+        
+        /* Cover */
+        .cover {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #f9c74f 0%, #ffd60a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Grid de cores */
+        .color-grid {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .color-card {
+            width: calc(33.33% - 22px);
+            background: #1b263b;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 120px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .color-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .color-hex {
+            font-size: 14px;
+            color: #778da9;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Cards */
+        .card {
+            background: #1b263b;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 24px 0;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .card-text {
+            color: #e0e1dd;
+        }
+        
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #0d1b2a;
+            background: linear-gradient(135deg, #f9c74f 0%, #ffd60a 100%);
+        }
+        
+        /* Notes */
+        .note-box {
+            background: rgba(249, 199, 79, 0.1);
+            border-left: 4px solid #f9c74f;
+            padding: 32px;
+            margin-top: 48px;
+            border-radius: 0 16px 16px 0;
+        }
+        
+        .note-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #f9c74f;
+        }
+        
+        .note-content {
+            color: #e0e1dd;
+        }
+        
+        /* Typography samples */
+        .sample-group {
+            margin: 32px 0;
+        }
+        
+        .spec-label {
+            display: inline-block;
+            background: #f9c74f;
+            color: #0d1b2a;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .sample-hero { font-size: 48px; font-weight: 800; line-height: 1.1; }
+        .sample-section { font-size: 36px; font-weight: 700; line-height: 1.2; }
+        .sample-subtitle { font-size: 24px; font-weight: 500; line-height: 1.4; color: #e0e1dd; }
+        .sample-body { font-size: 16px; font-weight: 400; line-height: 1.6; }
+        .sample-caption { font-size: 14px; font-weight: 400; color: #778da9; }
+        
+        /* Print */
+        @media print {
+            .page { page-break-after: always; }
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+        
+        /* Versão para impressão/PDF */
+        .print-only { display: none; }
+        @media print {
+            .print-only { display: block; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>BRAND BOOK</h1>
-        <p style="font-size: 24px; color: #e0e1dd; margin-bottom: 40px;">Dani Mentoria Tributária</p>
+
+    <!-- CAPA -->
+    <div class="page cover">
+        <h1 class="hero-title gradient-text">BRAND BOOK</h1>
+        <p class="subtitle">Dani Mentoria Tributária</p>
+        <p style="font-size: 16px; color: #778da9;">Versão 1.0 — Abril 2026</p>
+    </div>
+
+    <!-- CORES PRIMÁRIAS -->
+    <div class="page">
+        <h2 class="section-title">Paleta de Cores</h2>
         
-        <div class="note">
-            <strong>📝 Nota:</strong> Este é um preview simplificado. O HTML completo com CSS está no arquivo <code>brand-book.html</code> que pode ser aberto diretamente no navegador.
-        </div>
-        
-        <h2>Paleta de Cores</h2>
-        <div class="colors">
-            <div class="color">
-                <div class="swatch" style="background: #0d1b2a;"></div>
-                <p>Azul Profundo</p>
-                <p class="hex">#0d1b2a</p>
+        <h3 style="font-size: 24px; margin: 48px 0 24px;">Cores Primárias</h3>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #0d1b2a;"></div>
+                <p class="color-name">Azul Profundo</p>
+                <p class="color-hex">#0d1b2a</p>
             </div>
-            <div class="color">
-                <div class="swatch" style="background: #1b263b;"></div>
-                <p>Azul Médio</p>
-                <p class="hex">#1b263b</p>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #1b263b;"></div>
+                <p class="color-name">Azul Médio</p>
+                <p class="color-hex">#1b263b</p>
             </div>
-            <div class="color">
-                <div class="swatch" style="background: #f9c74f;"></div>
-                <p>Amarelo Vibrante</p>
-                <p class="hex">#f9c74f</p>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #415a77;"></div>
+                <p class="color-name">Azul Claro</p>
+                <p class="color-hex">#415a77</p>
             </div>
         </div>
-        
-        <h2>Tipografia</h2>
-        <div class="info">
-            <p><strong>Fonte:</strong> Inter (Google Fonts)</p>
-            <p><strong>Headlines:</strong> 700-800 weight</p>
-            <p><strong>Body:</strong> 400 weight, 16px</p>
+
+        <h3 style="font-size: 24px; margin: 48px 0 24px;">Cores de Destaque</h3>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #f9c74f;"></div>
+                <p class="color-name">Amarelo Vibrante</p>
+                <p class="color-hex">#f9c74f</p>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #ffd60a;"></div>
+                <p class="color-name">Dourado</p>
+                <p class="color-hex">#ffd60a</p>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #2ec4b6;"></div>
+                <p class="color-name">Verde Água</p>
+                <p class="color-hex">#2ec4b6</p>
+            </div>
         </div>
-        
-        <h2>Elementos</h2>
-        <div class="info">
-            <p>✓ Gradientes suaves (azul escuro)</p>
-            <p>✓ Formas geométricas decorativas</p>
-            <p>✓ Bordas arredondadas (8-16px)</p>
-            <p>✓ Contraste alto (texto claro sobre fundo escuro)</p>
+
+        <div class="note-box">
+            <h4 class="note-title">Nota da Dani</h4>
+            <p class="note-content">As cores primárias devem ser usadas como base de todos os materiais. O amarelo vibrante é a cor de destaque para CTAs e elementos importantes. O verde água pode ser usado para elementos de suporte e sucesso.</p>
         </div>
-        
-        <div class="note" style="margin-top: 40px;">
-            <strong>📁 Arquivos:</strong><br>
-            • <code>design-system.md</code> — Documentação completa<br>
-            • <code>brand-book.html</code> — HTML completo para navegador<br>
-            • <code>brand-book.pdf</code> — PDF para impressão
+    </div>
+
+    <!-- TIPOGRAFIA -->
+    <div class="page">
+        <h2 class="section-title">Tipografia</h2>
+
+        <div class="sample-group">
+            <span class="spec-label">HERO TITLE</span>
+            <h1 class="sample-hero">Recuperação Tributária</h1>
+            <p style="color: #778da9; margin-top: 8px;">Inter 800 — 48px — Line-height: 1.1</p>
         </div>
+
+        <div class="sample-group">
+            <span class="spec-label">SECTION TITLE</span>
+            <h2 class="sample-section">Tese Principal</h2>
+            <p style="color: #778da9; margin-top: 8px;">Inter 700 — 36px — Line-height: 1.2</p>
+        </div>
+
+        <div class="sample-group">
+            <span class="spec-label">SUBTITLE</span>
+            <h3 class="sample-subtitle">Como recuperar valores pagos indevidamente</h3>
+            <p style="color: #778da9; margin-top: 8px;">Inter 500 — 24px — Line-height: 1.4</p>
+        </div>
+
+        <div class="sample-group">
+            <span class="spec-label">BODY TEXT</span>
+            <p class="sample-body">A recuperação tributária é o procedimento feito a partir de cruzamentos de informações fiscais. Identifique pagamentos indevidos ou a maior e recupere valores para o contribuinte.</p>
+            <p style="color: #778da9; margin-top: 8px;">Inter 400 — 16px — Line-height: 1.6</p>
+        </div>
+
+        <div class="sample-group">
+            <span class="spec-label">CAPTION</span>
+            <p class="sample-caption">Prazo decadencial: 5 anos | Prazo prescricional: 5 anos</p>
+            <p style="color: #778da9; margin-top: 8px;">Inter 400 — 14px — Line-height: 1.5</p>
+        </div>
+
+        <div class="note-box">
+            <h4 class="note-title">Nota da Dani</h4>
+            <p class="note-content">A fonte Inter foi escolhida pela sua legibilidade e versatilidade. Headlines devem ser sempre em negrito para criar hierarquia visual clara.</p>
+        </div>
+    </div>
+
+    <!-- ELEMENTOS -->
+    <div class="page">
+        <h2 class="section-title">Elementos Visuais</h2>
+
+        <h3 style="font-size: 24px; margin: 32px 0;">Botões</h3>
+        <p style="color: #e0e1dd; margin-bottom: 24px;">Botões são usados para chamadas para ação e navegação principal.</p>
+        <p><a href="#" class="btn">Botão Primário</a></p>
+
+        <h3 style="font-size: 24px; margin: 48px 0 16px;">Cards</h3>
+        <div class="card">
+            <h4 class="card-title">Título do Card</h4>
+            <p class="card-text">Conteúdo do card com descrição e informações relevantes.</p>
+        </div>
+
+        <h3 style="font-size: 24px; margin: 48px 0 16px;">Gradientes</h3>
+        <div style="height: 80px; background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%); border-radius: 12px; margin-bottom: 16px;"></div>
+        <p style="font-size: 14px; color: #778da9; font-family: 'Courier New', monospace;">linear-gradient(135deg, #0d1b2a, #1b263b, #415a77)</p>
+
+        <div style="height: 80px; background: linear-gradient(135deg, #f9c74f 0%, #ffd60a 100%); border-radius: 12px; margin: 16px 0;"></div>
+        <p style="font-size: 14px; color: #778da9; font-family: 'Courier New', monospace;">linear-gradient(135deg, #f9c74f, #ffd60a)</p>
+
+        <div class="note-box">
+            <h4 class="note-title">Nota da Dani</h4>
+            <p class="note-content">Use botões primários (amarelos) apenas para a ação principal da página. Os círculos decorativos devem ser sutis e não competir com o conteúdo.</p>
+        </div>
+    </div>
+
+    <!-- APLICAÇÕES -->
+    <div class="page">
+        <h2 class="section-title">Aplicações</h2>
+
+        <h3 style="font-size: 24px; margin: 48px 0 24px;">Estrutura de Slides</h3>
+
+        <div class="card" style="background: linear-gradient(180deg, #1b263b, #0d1b2a);">
+            <p style="color: #f9c74f; font-size: 14px; margin-bottom: 16px;">HERO SECTION</p>
+            <h2 style="font-size: 36px; margin-bottom: 16px;">Título Grande da Seção</h2>
+            <p style="color: #e0e1dd; margin-bottom: 24px;">Subtítulo explicativo sobre o conteúdo da seção</p>
+            <p><a href="#" class="btn">Chamada para Ação</a></p>
+        </div>
+
+        <h3 style="font-size: 24px; margin: 48px 0 16px;">Cards com Ícones</h3>
+        <div style="display: -webkit-box; display: -ms-flexbox; display: flex; gap: 24px;">
+            <div class="card" style="-webkit-box-flex: 1; -ms-flex: 1; flex: 1; padding: 24px;">
+                <div style="width: 48px; height: 48px; background: #f9c74f; border-radius: 12px; margin-bottom: 16px;"></div>
+                <h4 style="font-size: 16px; margin-bottom: 8px;">Recurso 1</h4>
+                <p style="font-size: 14px; color: #778da9;">Descrição breve.</p>
+            </div>
+            <div class="card" style="-webkit-box-flex: 1; -ms-flex: 1; flex: 1; padding: 24px;">
+                <div style="width: 48px; height: 48px; background: #2ec4b6; border-radius: 12px; margin-bottom: 16px;"></div>
+                <h4 style="font-size: 16px; margin-bottom: 8px;">Recurso 2</h4>
+                <p style="font-size: 14px; color: #778da9;">Descrição breve.</p>
+            </div>
+            <div class="card" style="-webkit-box-flex: 1; -ms-flex: 1; flex: 1; padding: 24px;">
+                <div style="width: 48px; height: 48px; background: #e63946; border-radius: 12px; margin-bottom: 16px;"></div>
+                <h4 style="font-size: 16px; margin-bottom: 8px;">Recurso 3</h4>
+                <p style="font-size: 14px; color: #778da9;">Descrição breve.</p>
+            </div>
+        </div>
+
+        <div class="note-box" style="margin-top: 48px;">
+            <h4 class="note-title">Nota da Dani</h4>
+            <p class="note-content">Cada slide deve ter hierarquia clara: título grande, subtítulo médio, corpo pequeno. Use cards com ícones coloridos para destacar pontos importantes.</p>
+        </div>
+    </div>
+
+    <!-- FINAL -->
+    <div class="page" style="display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center;">
+        <h2 style="font-size: 48px; margin-bottom: 24px;">Aplicação Consistente</h2>
+        <p style="font-size: 24px; color: #e0e1dd; max-width: 600px; margin-bottom: 48px;">
+            Este brand book serve como guia para todos os materiais da Dani Mentoria Tributária.
+        </p>
         
-        <p style="margin-top: 40px; color: #778da9;">
+        <div style="display: -webkit-box; display: -ms-flexbox; display: flex; gap: 32px; margin-bottom: 48px;">
+            <div style="text-align: center;">
+                <div style="width: 60px; height: 60px; background: #f9c74f; border-radius: 12px; margin: 0 auto 16px;"></div>
+                <p style="font-size: 14px; color: #778da9;">Apresentações</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="width: 60px; height: 60px; background: #2ec4b6; border-radius: 12px; margin: 0 auto 16px;"></div>
+                <p style="font-size: 14px; color: #778da9;">Posts</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="width: 60px; height: 60px; background: #e63946; border-radius: 12px; margin: 0 auto 16px;"></div>
+                <p style="font-size: 14px; color: #778da9;">Documentos</p>
+            </div>
+        </div>
+
+        <p style="color: #778da9;">
             Criado por ARIA • Abril 2026
         </p>
     </div>
+
 </body>
 </html>
