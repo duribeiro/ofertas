@@ -6,9 +6,18 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
     
+    :root {
+      --bg: #f8f9fa;
+      --text: #111827;
+      --text-secondary: #4b5563;
+      --brand: #1b4d3c;
+      --accent: #d4af37;
+      --border: rgba(0,0,0,0.08);
+    }
+    
     @page {
       size: A4 landscape;
-      margin: 15mm;
+      margin: 0;
     }
     
     * {
@@ -19,156 +28,167 @@
     
     body {
       font-family: 'Inter', -apple-system, sans-serif;
-      background: #f8f9fa;
-      color: #111827;
+      background: #e5e7eb; /* cor de fundo fora da página para visualização no navegador */
+      color: var(--text);
     }
     
-    .slide {
+    .page {
+      width: 297mm;
+      height: 210mm;
+      padding: 20mm 24mm;
+      position: relative;
       page-break-after: always;
       page-break-inside: avoid;
-      min-height: 160mm;
-      display: block;
-      padding: 20mm;
-      position: relative;
+      background: var(--bg);
+      overflow: hidden;
+      margin: 0 auto;
+      background-image: 
+        linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
     }
     
-    .slide:last-child {
-      page-break-after: auto;
-    }
-    
-    .slide-content {
-      max-width: 230mm;
+    .page-content {
+      max-width: 240mm;
       margin: 0 auto;
       background: #fff;
       padding: 15mm;
-      border-radius: 8mm;
-      box-shadow: 0 5mm 10mm rgba(0,0,0,0.05);
+      border-radius: 4mm;
+      border: 1px solid var(--border);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    
-    .center {
+
+    .page-content-center {
       text-align: center;
+      align-items: center;
     }
-    
+
+    /* Typography */
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
-      color: #111827;
-      margin-bottom: 5mm;
     }
-    
+
     .hero-title {
-      font-size: 14mm;
+      font-size: 38pt;
       line-height: 1.1;
+      margin-bottom: 15px;
+      color: var(--text);
     }
     
     .hero-title em {
-      color: #1b4d3c;
+      color: var(--brand);
       font-style: italic;
     }
-    
+
     .section-title {
-      font-size: 10mm;
-      color: #1b4d3c;
+      font-size: 28pt;
+      margin-bottom: 20px;
+      color: var(--brand);
+      line-height: 1.2;
     }
-    
+
     p {
-      font-size: 4.5mm;
-      color: #4b5563;
+      font-size: 14pt;
+      color: var(--text-secondary);
       line-height: 1.6;
+      margin-bottom: 15px;
     }
-    
+
     .pill {
-      padding: 2mm 5mm;
+      padding: 6px 16px;
       border-radius: 999px;
-      font-size: 3mm;
+      font-size: 10pt;
       font-weight: 600;
       background: rgba(27, 77, 60, 0.1);
-      color: #1b4d3c;
-      border: 0.5mm solid rgba(27, 77, 60, 0.2);
+      color: var(--brand);
+      border: 1px solid rgba(27, 77, 60, 0.2);
       display: inline-block;
-      margin-bottom: 5mm;
+      margin-bottom: 20px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    
+
+    /* Grid Fallback for WeasyPrint */
     .grid-2 {
       width: 100%;
       border-collapse: separate;
-      border-spacing: 10mm 0;
-      margin-top: 10mm;
+      border-spacing: 20px 0;
+      margin-top: 20px;
     }
     
     .grid-2 td {
       width: 50%;
       vertical-align: top;
-      background: #f8f9fa;
-      padding: 8mm;
-      border-radius: 3mm;
-      border: 0.5mm solid rgba(0,0,0,0.08);
     }
     
-    .grid-2 td h3 {
-      font-size: 5mm;
-      margin-bottom: 3mm;
+    .card {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
     }
     
-    .grid-2 td p {
-      font-size: 3.5mm;
+    .card h3 {
+      font-size: 16pt;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 12pt;
       margin-bottom: 0;
     }
-    
-    ul {
-      font-size: 4.5mm;
-      color: #4b5563;
+
+    ul.benefits {
+      font-size: 14pt;
+      color: var(--text-secondary);
       line-height: 2;
-      margin-top: 8mm;
-      padding-left: 8mm;
+      margin-top: 20px;
+      padding-left: 20px;
     }
-    
-    li {
-      margin-bottom: 4mm;
-    }
-    
-    li strong {
-      color: #111827;
-    }
-    
-    .cta {
-      display: inline-block;
-      margin-top: 8mm;
-      padding: 4mm 8mm;
-      background: #1b4d3c;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 2mm;
-      font-size: 4mm;
-    }
-    
-    .footer {
-      margin-top: 10mm;
-      padding-top: 5mm;
-      border-top: 0.5mm solid rgba(0,0,0,0.1);
+
+    .page-footer {
+      position: absolute;
+      bottom: 12mm;
+      left: 24mm;
+      right: 24mm;
       display: flex;
       justify-content: space-between;
       color: #9ca3af;
-      font-size: 3mm;
+      font-size: 10pt;
     }
+
+    .page-number {
+      position: absolute;
+      bottom: 12mm;
+      right: 24mm;
+      font-size: 12pt;
+      color: var(--brand);
+      font-weight: 600;
+    }
+
   </style>
 </head>
 <body>
 
   <!-- Slide 1: Capa -->
-  <div class="slide">
-    <div class="slide-content center">
-      <div class="pill">Apresentação Estratégica</div>
-      <h1 class="hero-title">Recuperação <em>Tributária</em></h1>
-      <p style="max-width: 150mm; margin: 0 auto;">Descubra como sua empresa pode recuperar impostos pagos indevidamente nos últimos 5 anos com total segurança jurídica.</p>
+  <div class="page">
+    <div class="page-content page-content-center">
+      <div style="margin: 0 auto; text-align: center;">
+        <div class="pill">Apresentação Estratégica</div>
+        <h1 class="hero-title">Recuperação <em>Tributária</em></h1>
+        <p style="max-width: 600px; margin: 0 auto;">Descubra como sua empresa pode recuperar impostos pagos indevidamente nos últimos 5 anos com total segurança jurídica.</p>
+      </div>
     </div>
+    <div class="page-number">01</div>
   </div>
 
   <!-- Slide 2: O Problema -->
-  <div class="slide">
-    <div class="slide-content">
+  <div class="page">
+    <div class="page-content">
       <div class="pill">O Cenário Atual</div>
       <h2 class="section-title">95% das empresas pagam mais impostos que o necessário</h2>
       <p>A complexidade do sistema tributário brasileiro faz com que a grande maioria dos empresários recolha tributos a maior, comprometendo o caixa e a margem de lucro do negócio.</p>
@@ -176,47 +196,53 @@
       <table class="grid-2">
         <tr>
           <td>
-            <h3>Complexidade</h3>
-            <p>São mais de 40.000 leis tributárias em vigor, tornando quase impossível não cometer erros na apuração.</p>
+            <div class="card">
+              <h3>Complexidade</h3>
+              <p>São mais de 40.000 leis tributárias em vigor, tornando quase impossível não cometer erros na apuração.</p>
+            </div>
           </td>
           <td>
-            <h3>Risco de Caixa</h3>
-            <p>Dinheiro que deveria estar gerando lucro ou fluxo de caixa está retido nos cofres públicos.</p>
+            <div class="card">
+              <h3>Risco de Caixa</h3>
+              <p>Dinheiro que deveria estar gerando lucro ou fluxo de caixa está retido nos cofres públicos.</p>
+            </div>
           </td>
         </tr>
       </table>
     </div>
+    <div class="page-number">02</div>
   </div>
 
   <!-- Slide 3: A Solução -->
-  <div class="slide">
-    <div class="slide-content">
+  <div class="page">
+    <div class="page-content">
       <div class="pill">Nossa Metodologia</div>
       <h2 class="section-title">Como funciona a Recuperação</h2>
       <p>Realizamos uma auditoria digital completa das obrigações acessórias cruzando dados para identificar créditos ocultos.</p>
       
-      <ul>
+      <ul class="benefits">
         <li><strong>Diagnóstico Gratuito:</strong> Avaliamos a viabilidade sem custo inicial.</li>
         <li><strong>Segurança Jurídica:</strong> Teses pacificadas no STF e STJ.</li>
         <li><strong>Risco Zero:</strong> Remuneração baseada apenas no êxito (no proveito econômico).</li>
         <li><strong>Rapidez:</strong> Procedimento administrativo, sem necessidade de ação judicial para créditos do Simples Nacional.</li>
       </ul>
     </div>
+    <div class="page-number">03</div>
   </div>
 
   <!-- Slide 4: CTA -->
-  <div class="slide">
-    <div class="slide-content center">
-      <h2 class="section-title">Vamos diagnosticar sua empresa?</h2>
-      <p>Agende uma reunião de 30 minutos para entendermos seu cenário e estimar o potencial de recuperação.</p>
-      
-      <div class="cta">Agendar Diagnóstico Gratuito</div>
-      
-      <div class="footer">
-        <span>Dani Mentoria Tributária</span>
-        <span>2026</span>
+  <div class="page">
+    <div class="page-content page-content-center">
+      <div style="margin: 0 auto; text-align: center;">
+        <h2 class="section-title">Vamos diagnosticar sua empresa?</h2>
+        <p style="max-width: 600px; margin: 0 auto;">Agende uma reunião de 30 minutos para entendermos seu cenário e estimar o potencial de recuperação.</p>
+        
+        <div style="margin-top: 30px; padding: 15px 30px; background: var(--brand); color: #fff; font-weight: 600; border-radius: 8px; font-size: 12pt; display: inline-block;">
+          Agendar Diagnóstico Gratuito
+        </div>
       </div>
     </div>
+    <div class="page-number">04</div>
   </div>
 
 </body>
