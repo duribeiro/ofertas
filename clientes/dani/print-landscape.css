@@ -1,0 +1,49 @@
+<style>
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0 !important;
+  }
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    background: #f8f9fa !important;
+  }
+  .slider {
+    overflow: visible !important;
+    height: auto !important;
+    scroll-snap-type: none !important;
+  }
+  .slide {
+    page-break-after: always !important;
+    page-break-inside: avoid !important;
+    break-after: page !important;
+    break-inside: avoid !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .slide:last-child {
+    page-break-after: auto !important;
+  }
+  .slide-content {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    transform: scale(0.95);
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>

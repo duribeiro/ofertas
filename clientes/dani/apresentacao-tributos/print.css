@@ -1,0 +1,46 @@
+/* WeasyPrint - CSS para PDF (compatível) */
+
+@page {
+  size: A4 landscape;
+  margin: 10mm;
+}
+
+@media print {
+  body {
+    background: white !important;
+    background-image: none !important;
+  }
+  
+  .slider {
+    display: block !important;
+    overflow: visible !important;
+  }
+  
+  .slide {
+    display: block !important;
+    page-break-after: always;
+    break-after: page;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 180mm !important;
+    padding: 10mm !important;
+    box-sizing: border-box !important;
+  }
+  
+  .slide:last-child {
+    page-break-after: auto;
+  }
+  
+  .slide-content {
+    max-width: 250mm !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Remove animações */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
