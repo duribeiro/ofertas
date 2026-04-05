@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Webinar — Recuperação Tributária | Dani Mentoria Tributária</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --bg: #f8f9fa;
+      --text: #111827;
+      --text-secondary: #4b5563;
+      --brand: #1b4d3c;
+      --accent: #d4af37;
+      --border: rgba(0,0,0,0.08);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      background-image: 
+        linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* Scroll Snap */
+    .slider {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .slide {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+      position: relative;
+    }
+
+    .slide-content {
+      max-width: 1000px;
+      width: 100%;
+      background: #fff;
+      padding: 50px 60px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    
+    .hero-title em {
+      color: var(--brand);
+      font-style: italic;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      color: var(--brand);
+      line-height: 1.2;
+    }
+
+    .slide-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .pill {
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(27, 77, 60, 0.1);
+      color: var(--brand);
+      border: 1px solid rgba(27, 77, 60, 0.2);
+      display: inline-block;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Layout Helpers */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--bg);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--brand);
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* Lists */
+    ul {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 20px 0;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    li strong {
+      color: var(--text);
+    }
+
+    /* Highlight Box */
+    .highlight {
+      background: rgba(212, 175, 55, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 20px 0;
+    }
+
+    .highlight p {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+
+    /* Decorative Elements */
+    .brand-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+      top: -150px;
+      right: -150px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .brand-glow-center {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(27, 77, 60, 0.1) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Table */
+    .data-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 12px;
+      margin-top: 24px;
+    }
+
+    .data-table td {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--brand);
+    }
+
+    .data-table p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 24px;
+      left: 60px;
+      right: 60px;
+      display: flex;
+      justify-content: space-between;
+      color: #9ca3af;
+      font-size: 0.85rem;
+    }
+
+    /* Number Indicator */
+    .slide-number {
+      position: absolute;
+      bottom: 24px;
+      right: 60px;
+      font-size: 1rem;
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    /* Animations */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      color: var(--brand);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+      40% { transform: translateY(-15px) translateX(-50%); }
+      60% { transform: translateY(-8px) translateX(-50%); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .slide { padding: 30px; }
+      .slide-content { padding: 30px; }
+      .hero-title { font-size: 2.5rem; }
+      .section-title { font-size: 2rem; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .data-table { border-spacing: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider">
+  
+  <!-- SLIDE 1: Capa -->
+  <div class="slide">
+    <div class="brand-glow"></div>
+    <div class="slide-content" style="text-align: center;">
+      <div class="pill">Webinar Estratégico</div>
+      <h1 class="hero-title"><em>Recuperação</em> Tributária</h1>
+      <p style="max-width: 600px; margin: 0 auto;">Entenda os conceitos fundamentais por trás da recuperação tributária e como sua empresa pode recuperar valores pagos indevidamente.</p>
+      <p style="margin-top: 30px; color: #6b7280; font-size: 1rem;">Dani Mentoria Tributária</p>
+    </div>
+    <div class="scroll-indicator">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    </div>
+    <div class="slide-number">01</div>
+  </div>
+
+  <!-- SLIDE 2: O que é? -->
+  <div class="slide">
+    <div class="slide-content">
+      <div class="pill">Conceitos Básicos</div>
+      <h2 class="section-title">O que é Recuperação Tributária?</h2>
+      
+      <p>Também chamada de <strong>revisão fiscal</strong>, a recuperação tributária é o procedimento feito a partir de cruzamentos de informações fiscais.</p>
+      
+      <div class="highlight">
+        <p><strong>Objetivo:</strong> Identificar pagamentos de tributos indevidos ou a maior, valores que são recuperados para o contribuinte.</p>
+      </div>
+      
+      <p>Se pagou a mais, precisa ser devolvido. Se pagou o que não devia, precisa ser recuperado.</p>
+      
+      <div class="grid-2">
+        <div class="card">
+          <h3>Compensação Tributária</h3>
+          <p>Use os valores recuperados para abater tributos futuros.</p>
+        </div>
+        <div class="card">
+          <h3>Restituição</h3>
+          <p>Receba os valores em dinheiro diretamente na conta.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-number">02</div>
+  </div>
+
+  <!-- SLIDE 3: Documentos Analisados -->
+  <div class="slide">
+    <div class="slide-content">
+      <div class="pill">O Procedimento</div>
+      <h2 class="section-title">Quais informações fiscais são analisadas?</h2>
+      
+      <p>Informações contidas nos documentos fiscais declarados pelo contador:</p>
+      
+      <div class="grid-3">
+        <div class="card" style="text-align: center;">
+          <h3 style="font-size: 2rem; margin-bottom: 8px;">📄</h3>
+          <p style="font-size: 0.95rem;"><strong>SPED</strong></p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3 style="font-size: 2rem; margin-bottom: 8px;">📊</h3>
+          <p style="font-size: 0.95rem;"><strong>ECD</strong></p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3 style="font-size: 2rem; margin-bottom: 8px;">📋</h3>
+          <p style="font-size: 0.95rem;"><strong>EFD</strong></p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3 style="font-size: 2rem; margin-bottom: 8px;">🏷️</h3>
+          <p style="font-size: 0.95rem;"><strong>XMLs</strong></p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3 style="font-size: 2rem; margin-bottom: 8px;">📑</h3>
+          <p style="font-size: 0.95rem;"><strong>ECF</strong></p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3 style="font-size: 2rem; margin-bottom: 8px;">🧾</h3>
+          <p style="font-size: 0.95rem;"><strong>NFS-e</strong></p>
+        </div>
+      </div>
+      
+      <div class="highlight" style="margin-top: 30px;">
+        <p>São muitos documentos e informações. Por isso, utilizamos <strong>softwares especializados</strong> como ferramenta de trabalho. Mas nada adianta ter o software sem o conhecimento técnico.</p>
+      </div>
+    </div>
+    <div class="slide-number">03</div>
+  </div>
+
+  <!-- SLIDE 4: Tributos Recuperáveis -->
+  <div class="slide">
+    <div class="slide-content">
+      <div class="pill">Escopo de Atuação</div>
+      <h2 class="section-title">Quais tributos podem ser recuperados?</h2>
+      
+      <div class="grid-2">
+        <div>
+          <h3 style="margin-bottom: 16px;">Tributos Federais</h3>
+          <ul style="margin: 0;">
+            <li><strong>PIS</strong> — Programa de Integração Social</li>
+            <li><strong>COFINS</strong> — Contribuição para Financiamento da Seguridade</li>
+            <li><strong>IRPJ</strong> — Imposto de Renda Pessoa Jurídica</li>
+            <li><strong>CSLL</strong> — Contribuição Social sobre o Lucro Líquido</li>
+            <li><strong>IPI</strong> — Imposto sobre Produtos Industrializados</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 16px;">Tributos Estaduais e Municipais</h3>
+          <ul style="margin: 0;">
+            <li><strong>ICMS</strong> — Imposto sobre Circulação de Mercadorias e Serviços</li>
+            <li><strong>ISS</strong> — Imposto Sobre Serviços</li>
+          </ul>
+          
+          <div class="highlight" style="margin-top: 30px;">
+            <p style="font-size: 1rem;">Créditos estão tanto nos tributos federais quanto nos estaduais.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-number">04</div>
+  </div>
+
+  <!-- SLIDE 5: Prazos -->
+  <div class="slide">
+    <div class="slide-content">
+      <div class="pill">Aspectos Temporais</div>
+      <h2 class="section-title">Prazos para Recuperação</h2>
+      
+      <p>Os prazos variam conforme o tipo de tributo e a legislação aplicável.</p>
+      
+      <div class="grid-2">
+        <div class="card" style="text-align: center; padding: 40px 24px;">
+          <h3 style="font-size: 3rem; margin-bottom: 16px; color: var(--accent);">5 anos</h3>
+          <p><strong>Prazo Decadencial</strong><br>Tempo para constituir o crédito</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 40px 24px;">
+          <h3 style="font-size: 3rem; margin-bottom: 16px; color: var(--accent);">5 anos</h3>
+          <p><strong>Prazo Prescricional</strong><br>Tempo para exigir a restituição</p>
+        </div>
+      </div>
+      
+      <div class="highlight" style="margin-top: 30px;">
+        <p><strong>Atenção:</strong> Os prazos são contados de forma diferente dependendo da situação: pagamento indevido, compensação ou restituição.</p>
+      </div>
+    </div>
+    <div class="slide-number">05</div>
+  </div>
+
+  <!-- SLIDE 6: Como Nasce uma Tese -->
+  <div class="slide">
+    <div class="slide-content">
+      <div class="pill">Jurisprudência</div>
+      <h2 class="section-title">Como nasce uma tese tributária?</h2>
+      
+      <p>A tese tributária nasce a partir de um processo específico que questiona determinado assunto:</p>
+      
+      <ul>
+        <li>O caso ganha <strong>repercussão jurídica</strong></li>
+        <li>Gera novos processos sobre o <strong>mesmo assunto</strong></li>
+        <li>Tribunais de vários estados começam a decidir</li>
+        <li>Para evitar decisões contraditórias, o tema vai ao <strong>STJ ou STF</strong></li>
+        <li>Decidem com <strong>repercussão geral</strong> → vale para todo o Brasil</li>
+      </ul>
+      
+      <div class="highlight" style="margin-top: 24px;">
+        <p><strong>Resultado:</strong> A partir do momento em que o STF ou STJ pacifica a tese, ela pode ser aplicada por todos os contribuintes que se enquadram na situação.</p>
+      </div>
+    </div>
+    <div class="slide-number">06</div>
+  </div>
+
+  <!-- SLIDE 7: Tese Mãe -->
+  <div class="slide">
+    <div class="slide-content">
+      <div class="pill">Exemplo Prático</div>
+      <h2 class="section-title">Tese Mãe vs Teses Filhotes</h2>
+      
+      <div class="card" style="background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--accent); margin-bottom: 30px;">
+        <h3 style="color: var(--accent);">Tese Mãe</h3>
+        <p style="font-size: 1.1rem; margin-bottom: 0;">Exclusão do <strong>ICMS</strong> da base de cálculo do <strong>PIS</strong> e da <strong>COFINS</strong></p>
+      </div>
+      
+      <p style="margin-bottom: 20px;">A partir da tese mãe, derivam as <strong>teses filhotes</strong>:</p>
+      
+      <table class="data-table">
+        <tr>
+          <td>
+            <h4>Tese Filhote 1</h4>
+            <p>Exclusão do ICMS da base de cálculo do CSLL e do IRPJ</p>
+          </td>
+          <td>
+            <h4>Tese Filhote 2</h4>
+            <p>Exclusão do ISS da base de cálculo do PIS e da COFINS</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h4>Tese Filhote 3</h4>
+            <p>Exclusão do PIS e da COFINS da própria base de cálculo do PIS e da COFINS</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="slide-number">07</div>
+  </div>
+
+  <!-- SLIDE 8: CTA -->
+  <div class="slide">
+    <div class="brand-glow-center"></div>
+    <div class="slide-content" style="text-align: center;">
+      <div class="pill">Próximo Passo</div>
+      <h2 class="section-title">Vamos diagnosticar sua empresa?</h2>
+      
+      <p style="max-width: 600px; margin: 0 auto;">Agende uma reunião de 30 minutos para entendermos seu cenário e estimar o potencial de recuperação.</p>
+      
+      <a href="#" style="display: inline-block; margin-top: 30px; padding: 16px 40px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 1.1rem;">
+        Agendar Diagnóstico Gratuito
+      </a>
+      
+      <p style="margin-top: 40px; color: #6b7280; font-size: 1rem;">
+        <strong>Dani Mentoria Tributária</strong><br>
+        Especialistas em Recuperação Tributária
+      </p>
+    </div>
+    <div class="slide-number">08</div>
+  </div>
+
+</div>
+
+</body>
+</html>
